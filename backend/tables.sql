@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS `todoapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `todoapp`;
+
+CREATE TABLE IF NOT EXISTS `todoapp`.`users` (
+  `id` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+  CREATE TABLE `todoapp`.`todo` (
+  `create_time` TIMESTAMP NOT NULL  DEFAULT CURRENT_TIMESTAMP,
+  `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `id` VARCHAR(45) NOT NULL,
+  `title` VARCHAR(45) NULL,
+  `status` VARCHAR(45) NULL,
+  `userId` VARCHAR(45) NOT NULL,
+  `token` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`id`)
+
+)
+
+
+
